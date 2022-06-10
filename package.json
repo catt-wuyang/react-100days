@@ -1,6 +1,7 @@
 {
   "name": "todo-list",
   "version": "1.0.0",
+  "homepage": "todo-list",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && rm -rf docs && mv build docs "
