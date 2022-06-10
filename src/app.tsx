@@ -2,15 +2,18 @@ import "./style.css";
 import React, { useState, useEffect } from "react";
 import TodoForm from "./todoForm";
 import TodoList from "./todoList";
+import { TodoData } from "./types";
 
 const LOCALSTORAGE_KEY = "TODO_LIST";
 
 const App = () => {
-  const [todos, setTodos] = useState([]);
-  const [date, setDate] = useState(null);
+  const [todos, setTodos] = useState<Array<TodoData>>([]);
+  const [date, setDate] = useState<string | null>(null);
 
   useEffect(() => {
-    const storageTodos = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
+    const storageTodos = JSON.parse(
+      localStorage.getItem(LOCALSTORAGE_KEY) || ""
+    );
     if (storageTodos) {
       setTodos(storageTodos);
     }

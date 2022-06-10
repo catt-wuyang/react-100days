@@ -1,17 +1,14 @@
 import "./style.css";
 import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { TodoData } from "./types";
 
 const TodoForm = ({ addTodo }) => {
-  const [todo, setTodo] = useState({
+  const [todo, setTodo] = useState<TodoData>({
     id: "",
     task: "",
     completed: false,
   });
-
-  const handleInputChange = (e) => {
-    setTodo({ ...todo, task: e.target.value });
-  };
 
   useEffect(() => {
     const listener = (e) => {
@@ -28,6 +25,10 @@ const TodoForm = ({ addTodo }) => {
       document.removeEventListener("keydown", listener);
     };
   }, [todo]);
+
+  const handleInputChange = (e) => {
+    setTodo({ ...todo, task: e.target.value });
+  };
 
   return (
     <div>

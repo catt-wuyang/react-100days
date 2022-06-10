@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["dom", "es2015.core", "es2016", "es2017", "es2018"],
+    "allowJs": true,
+    "checkJs": false,
+    "jsx": "react",
+    "declaration": true,
+    "sourceMap": true,
+    "rootDirs": ["src", "stories"],
+    "outDir": "./lib",
+    "importHelpers": true,
+    "strict": false,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "plugins": [{ "transform": "ts-transform-paths" }],
+    "declarationDir": "types"
+  },
+  "include": ["./src"],
+  "exclude": [".**.test.*"]
+}
