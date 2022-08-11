@@ -2,12 +2,17 @@ import "./style.css";
 import React, { useState, useEffect } from "react";
 import TodoForm from "./todoForm";
 import TodoList from "./todoList";
-import { TodoData } from "./types";
 
 const LOCALSTORAGE_KEY = "TODO_LIST";
 
-const App = () => {
-  const [todos, setTodos] = useState<Array<TodoData>>([]);
+interface TodoType {
+  id: string;
+  task: string;
+  completed: boolean;
+}
+
+const App: React.FC = function () {
+  const [todos, setTodos] = useState<TodoType[]>([]);
   const [date, setDate] = useState<string | null>(null);
 
   useEffect(() => {
@@ -60,12 +65,12 @@ const App = () => {
     setTodos([todo, ...todos]);
   };
 
-  const handleRemoveTodo = (id) => {
+  const handleRemoveTodo = (id: string) => {
     console.log("remove", id);
-    setTodos(todos.filter((todo) => todo.id !== id));
+    setTodos(todos.filter((todo: TodoType) => todo.id !== id));
   };
 
-  const handleCompleteTodo = (id) => {
+  const handleCompleteTodo = (id: string) => {
     const newTodos = todos
       .map((todo) => {
         if (todo.id === id) {
@@ -78,6 +83,10 @@ const App = () => {
     setTodos(newTodos);
   };
 
+  const handleCompleteAll = (todos: TodoType[]) => {
+    setTodos(todos);
+  };
+
   return (
     <div className="container">
       <h1 className="title">Todo List</h1>
@@ -87,6 +96,7 @@ const App = () => {
         todos={todos}
         removeTodo={handleRemoveTodo}
         completedTodo={handleCompleteTodo}
+        completedAll={handleCompleteAll}
       />
     </div>
   );

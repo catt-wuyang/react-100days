@@ -1,16 +1,51 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-function TodoList({ todos, removeTodo, completedTodo }) {
-  function handleCompletedTask(e) {
+type inputEvent = React.ChangeEvent<HTMLInputElement>;
+
+function TodoList({ todos, removeTodo, completedTodo, completedAll }) {
+  const [allChecked, setAllChecked] = useState(false);
+  const [completedNum, setCompletedNum] = useState(0);
+
+  function handleCompletedTask(e: inputEvent) {
     completedTodo(e.target.dataset.id);
   }
 
-  function handleRemoveTask(e) {
-    removeTodo(e.target.dataset.id);
+  function handleRemoveTask(e: React.MouseEvent) {
+    const newId = (e.target as HTMLInputElement).getAttribute("data-id");
+    removeTodo(newId);
   }
+
+  function handleAllCompleted(e: inputEvent) {
+    setAllChecked(e.target.checked);
+    const nextTodos = [...todos];
+    nextTodos.forEach((todo) => (todo.completed = e.target.checked));
+    completedAll(nextTodos);
+  }
+
+  const archive = todos.filter((todo) => todo.completed);
+
+  useEffect(() => {
+    setCompletedNum(archive.length);
+    // check todos completed set allChecked
+    const isAllChecked = archive.length === todos.length ? true : false;
+    setAllChecked(isAllChecked);
+  }, [todos]);
 
   return (
     <div className="todo-list">
+      <div>
+        ✔ completed： {completedNum}/{todos.length}
+      </div>
+      <div className={`todo-item ${allChecked ? "task-completed" : ""}`}>
+        <div className="checkbox">
+          <input
+            type="checkbox"
+            checked={allChecked}
+            onChange={handleAllCompleted}
+          />
+          <label></label>
+        </div>
+      </div>
       {todos.map((todo) => {
         return (
           <div
@@ -38,5 +73,18 @@ function TodoList({ todos, removeTodo, completedTodo }) {
     </div>
   );
 }
+
+// TodoList.prototype = {
+//   todos: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       id: PropTypes.string.isRequired,
+//       task: PropTypes.string.isRequired,
+//       completed: PropTypes.bool.isRequired,
+//     })
+//   ).isRequired,
+//   removeTodo: PropTypes.func.isRequired,
+//   completedTodo: PropTypes.func.isRequired,
+//   completedAll: PropTypes.func.isRequired,
+// };
 
 export default TodoList;

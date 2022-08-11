@@ -1,10 +1,15 @@
 import "./style.css";
 import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { TodoData } from "./types";
+
+interface TodoType {
+  id: string;
+  task: string;
+  completed: boolean;
+}
 
 const TodoForm = ({ addTodo }) => {
-  const [todo, setTodo] = useState<TodoData>({
+  const [todo, setTodo] = useState<TodoType>({
     id: "",
     task: "",
     completed: false,
