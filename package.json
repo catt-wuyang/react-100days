@@ -5,8 +5,14 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && rm -rf docs && mv build docs ",
-    "lint": "eslint --fix src",
-    "prepare": "husky install"
+    "lint": "eslint --config .eslintrc.js --fix src",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm lint"
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -43,6 +49,9 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "husky": "^8.0.1"
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3"
   }
 }
