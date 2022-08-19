@@ -24,6 +24,6 @@
     "plugins": [{ "transform": "ts-transform-paths" }],
     "declarationDir": "types"
   },
-  "include": ["./src"],
+  "include": ["./src", "public/01.todo-list", "chore/02.counter", "chore/01.game @@@@", "chore/data", "chore/layout-pages", "chore/App.tsx", "chore/pagess", "chore/hooksBestPractices.tsx", "chore/layout.tsx", "chore/flexible.js", "chore/countDown.jsx"],
   "exclude": [".**.test.*"]
 }

@@ -1,174 +1,62 @@
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 body {
-  font-family: apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
-    Microsoft Yahei, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
-    Segoe UI Symbol;
-}
-
-.container {
-  font-size: 14px;
-  line-height: 24px;
+  font-family: Fira Code, Menlo, Monaco, Consolas, Liberation Mono, Courier New,
+    monospace;
+  font-weight: 400;
+  font-size: 18px;
   color: #292929;
-  max-width: 600px;
-  margin: 16px auto;
 }
 
-.title {
+.mw-640 {
+  max-width: 640px;
+  margin: 40px auto;
+}
+
+.display-page h1 {
   font-size: 24px;
   font-weight: 400;
-  margin-bottom: 8px;
-  text-align: right;
+  color: #292922;
+  margin: 40px;
 }
 
-.date {
-  font-family: Segoe, "Segoe UI", Arial, "sans-serif";
-  font-size: 12px;
+.days-page {
+  max-width: 640px;
+  margin: 40px auto;
+}
+
+.days-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.days-display {
+  font-family: inherit;
+  font-size: 18px;
   font-weight: 400;
-  color: rgb(121, 119, 117);
-  text-align: right;
-  margin-bottom: 16px;
-}
-
-.add-input {
-  width: 100%;
-  height: 40px;
-  font-size: 14px;
-  line-height: 40px;
-  border: 1px solid transparent;
-  border-radius: 6px;
-  background-color: rgba(25, 25, 25, 0.05);
-  margin-bottom: 8px;
-  padding: 0 12px;
-  box-sizing: border-box;
-}
-
-.add-input::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: rgba(25, 25, 25, 0.2);
-  opacity: 1;
-}
-
-.add-input:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
-  color: rgba(25, 25, 25, 0.2);
-}
-
-.add-input::-ms-input-placeholder {
-  /* Microsoft Edge */
-  color: rgba(25, 25, 25, 0.2);
-}
-
-.todo-list {
-  margin-top: 8px;
-}
-
-.todo-item {
   display: flex;
-  align-items: center;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid rgba(25, 25, 25, 0.05);
-  position: relative;
-  z-index: 1;
+  flex-direction: column;
 }
 
-.todo-item:hover {
-  background-color: #f5f8ff;
-  border-bottom: 1px solid transparent;
+.days-link {
+  text-decoration: none;
+  color: #292929;
+  margin-bottom: 12px;
 }
 
-.task-completed .task-text {
-  text-decoration: line-through;
-  color: rgb(161, 159, 157);
+.days-link span {
+  margin-right: 8px;
+  opacity: 0.5;
 }
 
-.task-text {
-  display: inline-block;
-  font-size: 14px;
-  line-height: 24px;
-  margin-left: 4px;
-  vertical-align: middle;
+.days-link b {
+  font-weight: 300;
 }
 
-.task-remove {
-  background-image: url("./close-line.svg");
-  background-size: 100%;
-  background-position: center;
-  width: 18px;
-  height: 18px;
-  position: absolute;
-  z-index: 1;
-  right: 0;
-  cursor: pointer;
-}
-
-.checkbox {
-  display: block;
-  position: relative;
-  z-index: 1;
-}
-
-.checkbox input[type="checkbox"] {
-  width: 14px;
-  height: 14px;
-  opacity: 0.00000001;
-  position: absolute;
-  left: 4px;
-  top: -8px;
-  z-index: 2;
-  cursor: pointer;
-}
-
-.checkbox label:before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 14px;
-  height: 14px;
-  transition: transform 0.15s ease;
-  border: 1px solid rgb(161, 159, 157);
-  border-radius: 1px;
-  box-sizing: border-box;
-}
-
-.task-completed label:before {
-  background-color: rgb(161, 159, 157);
-  border: 1px solid rgb(161, 159, 157);
-}
-
-.checkbox label:after {
-  content: "";
-  display: block;
-  width: 7px;
-  height: 4px;
-  border-bottom: 1px solid #fff;
-  border-left: 1px solid #fff;
-  -webkit-transform: rotate(-45deg) scale(0);
-  transform: rotate(-45deg) scale(0);
-  transition: transform ease 0.15s;
-  will-change: transform;
-  position: absolute;
-  z-index: 1;
-  top: -4px;
-  left: 8px;
-}
-
-.checkbox input[type="checkbox"]:checked ~ label::before {
-  color: rgb(161, 159, 157);
-}
-
-.checkbox input[type="checkbox"]:checked ~ label::after {
-  -webkit-transform: rotate(-45deg) scale(1);
-  transform: rotate(-45deg) scale(1);
-}
-
-.checkbox label {
-  display: block;
-  padding-left: 24px;
+.days-link:hover {
+  color: #9acd32;
 }

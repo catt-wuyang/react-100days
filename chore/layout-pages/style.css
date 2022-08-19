@@ -1,0 +1,158 @@
+.rectangle {
+  width: 200px;
+  height: 100px;
+  border: 1px solid #222;
+  box-sizing: border-box;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  z-index: 1;
+}
+
+.square:after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  border: 1px solid #222;
+  width: 200%;
+  height: 200%;
+  transform: scale(0.5);
+  transform-origin: left top;
+  box-sizing: border-box;
+}
+
+.triangle {
+  width: 100px;
+  height: 100px;
+  border: 0.5px solid #222;
+  box-sizing: border-box;
+}
+
+.thinline {
+  width: 200px;
+  height: 1px;
+  transform: scale(0.5);
+  transform-origin: left;
+  background-color: #222;
+}
+
+.font p {
+  font-size: 12px;
+}
+
+.min-font p {
+  font-size: 16px;
+  transform: scale(0.5);
+  transform-origin: left top;
+}
+
+.text-block {
+  width: 200px;
+  border: 1px solid #222;
+}
+
+.sigle-line {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.mul-line {
+  position: relative;
+  z-index: 1;
+  line-height: 20px;
+  height: 40px;
+  overflow: hidden;
+}
+
+.mul-line:after {
+  content: "...";
+  display: inline-block;
+  position: absolute;
+  z-index: 1;
+  right: 8px;
+  bottom: 0;
+}
+
+/* basic css */
+
+.rec-container {
+  height: 200px;
+  border: 1px solid #222;
+}
+
+.rec-aside {
+  background-color: pink;
+}
+
+.rec-content {
+  background-color: yellowgreen;
+}
+
+/* float */
+
+.rec-flex-container {
+  display: flex;
+}
+
+.rec-flex-aside {
+  width: 200px;
+}
+
+.rec-flex-content {
+  flex: auto;
+}
+
+/* float */
+.rec-float-container {
+  overflow: hidden; /*用 float 需要清浮动*/
+}
+
+.rec-float-aside {
+  width: 200px;
+  height: 200px;
+  float: left;
+}
+
+.rec-float-content {
+  height: 200px;
+  margin-left: 200px;
+}
+
+.ret-flex-left,
+.ret-flex-right {
+  width: 100px;
+}
+
+.rec-pos-container {
+  position: relative;
+  z-index: 1;
+}
+
+.rec-pos-left {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 200px;
+}
+.rec-pos-middle {
+  height: 200px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.rec-pos-right {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 200px;
+}

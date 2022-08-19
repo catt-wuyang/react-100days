@@ -1,6 +1,0 @@
-{
-  "hooks": {
-    "pre-commit": "npm run lint",
-    "commit-msg": "node scripts/commitMsg.js"
-  }
-}
