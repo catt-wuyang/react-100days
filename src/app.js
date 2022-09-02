@@ -15,6 +15,14 @@ const App = function () {
           <span>002</span>
           <b>CountDown</b>
         </Link>
+        <Link to="/003" className="days-link">
+          <span>003</span>
+          <b>Select</b>
+        </Link>
+        <Link to="/004" className="days-link">
+          <span>004</span>
+          <b>optimization</b>
+        </Link>
       </div>
     </div>
   );
