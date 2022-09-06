@@ -1,7 +1,7 @@
 {
   "name": "react-100days",
   "version": "1.0.0",
-  "homepage": "https://github.com/catt-wuyang/react-100days.git",
+  "homepage": "react-100days",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && rm -rf docs && mv build docs ",
