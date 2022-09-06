@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/catt-wuyang/react-100days.git/static/css/main.2dd28cd7.css",
-    "main.js": "/catt-wuyang/react-100days.git/static/js/main.b4019e02.js",
-    "static/media/light.svg": "/catt-wuyang/react-100days.git/static/media/light.3a1a75172cab380e6937.svg",
-    "static/media/dark.svg": "/catt-wuyang/react-100days.git/static/media/dark.93505caa21b66d8a272c.svg",
-    "index.html": "/catt-wuyang/react-100days.git/index.html",
-    "static/media/close-line.svg": "/catt-wuyang/react-100days.git/static/media/close-line.02a1d7a21d3896dca6b6.svg",
-    "main.2dd28cd7.css.map": "/catt-wuyang/react-100days.git/static/css/main.2dd28cd7.css.map",
-    "main.b4019e02.js.map": "/catt-wuyang/react-100days.git/static/js/main.b4019e02.js.map"
+    "main.css": "/react-100days/static/css/main.190af6a5.css",
+    "main.js": "/react-100days/static/js/main.b4019e02.js",
+    "static/media/light.svg": "/react-100days/static/media/light.3a1a75172cab380e6937.svg",
+    "static/media/dark.svg": "/react-100days/static/media/dark.93505caa21b66d8a272c.svg",
+    "index.html": "/react-100days/index.html",
+    "static/media/close-line.svg": "/react-100days/static/media/close-line.02a1d7a21d3896dca6b6.svg",
+    "main.190af6a5.css.map": "/react-100days/static/css/main.190af6a5.css.map",
+    "main.b4019e02.js.map": "/react-100days/static/js/main.b4019e02.js.map"
   },
   "entrypoints": [
-    "static/css/main.2dd28cd7.css",
+    "static/css/main.190af6a5.css",
     "static/js/main.b4019e02.js"
   ]
 }
