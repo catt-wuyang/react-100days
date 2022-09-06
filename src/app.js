@@ -23,6 +23,14 @@ const App = function () {
           <span>004</span>
           <b>optimization</b>
         </Link>
+        <Link to="/005" className="days-link">
+          <span>005</span>
+          <b> communication</b>
+        </Link>
+        <Link to="/006" className="days-link">
+          <span>006</span>
+          <b> context</b>
+        </Link>
       </div>
     </div>
   );

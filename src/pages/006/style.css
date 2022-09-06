@@ -1,0 +1,44 @@
+.panel {
+  padding: 40px;
+  line-height: 1.4;
+}
+
+.panel.light {
+  background-color: #fff;
+}
+
+.panel.dark {
+  background-color: #222;
+  color: #fff;
+}
+
+.panel.dark strong {
+  color: rgb(20, 158, 202);
+}
+
+.panel strong {
+  color: rgba(8, 126, 164);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.icon {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  background-size: 100%;
+  cursor: pointer;
+}
+
+.icon.light {
+  background-image: url("./light.svg");
+}
+
+.icon.dark {
+  background-image: url("./dark.svg");
+}
