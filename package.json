@@ -1,18 +1,13 @@
 {
-  "name": "todo-list",
+  "name": "react-100days",
   "version": "1.0.0",
-  "homepage": "todo-list",
+  "homepage": "https://github.com/catt-wuyang/react-100days.git",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && rm -rf docs && mv build docs ",
     "lint": "eslint --config .eslintrc.js --fix src",
     "prepare": "husky install",
     "pre-commit": "lint-staged"
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": "npm lint"
-    }
   },
   "eslintConfig": {
     "extends": [
@@ -58,8 +53,6 @@
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
-    "babel-plugin-import": "^1.13.5",
-    "husky": "5.2.0",
-    "lint-staged": "^13.0.3"
+    "babel-plugin-import": "^1.13.5"
   }
 }

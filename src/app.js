@@ -29,7 +29,7 @@ const App = function () {
         </Link>
         <Link to="/006" className="days-link">
           <span>006</span>
-          <b> context</b>
+          <b>Theme</b>
         </Link>
       </div>
     </div>
