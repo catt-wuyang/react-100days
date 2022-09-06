@@ -1,14 +1,16 @@
 {
   "files": {
-    "main.css": "/todo-list/static/css/main.12f0cc14.css",
-    "main.js": "/todo-list/static/js/main.3d96d7eb.js",
-    "index.html": "/todo-list/index.html",
-    "static/media/close-line.svg": "/todo-list/static/media/close-line.02a1d7a21d3896dca6b6.svg",
-    "main.12f0cc14.css.map": "/todo-list/static/css/main.12f0cc14.css.map",
-    "main.3d96d7eb.js.map": "/todo-list/static/js/main.3d96d7eb.js.map"
+    "main.css": "/catt-wuyang/react-100days.git/static/css/main.2dd28cd7.css",
+    "main.js": "/catt-wuyang/react-100days.git/static/js/main.b4019e02.js",
+    "static/media/light.svg": "/catt-wuyang/react-100days.git/static/media/light.3a1a75172cab380e6937.svg",
+    "static/media/dark.svg": "/catt-wuyang/react-100days.git/static/media/dark.93505caa21b66d8a272c.svg",
+    "index.html": "/catt-wuyang/react-100days.git/index.html",
+    "static/media/close-line.svg": "/catt-wuyang/react-100days.git/static/media/close-line.02a1d7a21d3896dca6b6.svg",
+    "main.2dd28cd7.css.map": "/catt-wuyang/react-100days.git/static/css/main.2dd28cd7.css.map",
+    "main.b4019e02.js.map": "/catt-wuyang/react-100days.git/static/js/main.b4019e02.js.map"
   },
   "entrypoints": [
-    "static/css/main.12f0cc14.css",
-    "static/js/main.3d96d7eb.js"
+    "static/css/main.2dd28cd7.css",
+    "static/js/main.b4019e02.js"
   ]
 }
