@@ -10,7 +10,7 @@ const App: React.FC = function () {
 
   useEffect(() => {
     const storageTodos = JSON.parse(
-      localStorage.getItem(LOCALSTORAGE_KEY) || ""
+      localStorage.getItem(LOCALSTORAGE_KEY) || "{}"
     );
     if (storageTodos) {
       setTodos(storageTodos);
