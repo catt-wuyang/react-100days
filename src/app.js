@@ -23,6 +23,14 @@ const App = function () {
           <span>006</span>
           <b>Theme</b>
         </Link>
+        <Link to="/007" className="days-link">
+          <span>007</span>
+          <b>Control</b>
+        </Link>
+        <Link to="/012" className="days-link">
+          <span>012</span>
+          <b>Twitter</b>
+        </Link>
       </div>
     </div>
   );

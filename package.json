@@ -54,6 +54,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
-    "babel-plugin-import": "^1.13.5"
+    "babel-plugin-import": "^1.13.5",
+    "bad-words": "^3.0.4"
   }
 }
