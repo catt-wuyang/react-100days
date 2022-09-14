@@ -19,6 +19,10 @@ const App = function () {
           <span>007</span>
           <b>Theme</b>
         </Link>
+        <Link to="/010" className="days-link">
+          <span>010</span>
+          <b>Select</b>
+        </Link>
         <Link to="/011" className="days-link">
           <span>011</span>
           <b>Cart</b>
