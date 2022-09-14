@@ -1,0 +1,28 @@
+.cart-wrapper {
+  width: 640px;
+  margin: auto;
+}
+
+.cart-item {
+  border-bottom: 1px solid #d8d8d8;
+  padding: 24px;
+}
+
+.cart-checkout {
+  padding: 24px;
+}
+
+.product-name {
+  font-weight: 600;
+  margin-left: 12px;
+}
+
+.check-all {
+  margin-left: 12px;
+}
+
+.flex-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

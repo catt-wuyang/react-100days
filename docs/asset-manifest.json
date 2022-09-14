@@ -1,16 +1,19 @@
 {
   "files": {
-    "main.css": "/react-100days/static/css/main.190af6a5.css",
-    "main.js": "/react-100days/static/js/main.0fb67ebb.js",
+    "main.css": "/react-100days/static/css/main.a2e26b02.css",
+    "main.js": "/react-100days/static/js/main.72b12744.js",
     "static/media/light.svg": "/react-100days/static/media/light.3a1a75172cab380e6937.svg",
+    "static/media/iconfont.ttf?t=1634800654833": "/react-100days/static/media/iconfont.f41f9aff8a6dc4775529.ttf",
+    "static/media/iconfont.woff?t=1634800654833": "/react-100days/static/media/iconfont.498fa293fb30f2c7c7c1.woff",
+    "static/media/iconfont.woff2?t=1634800654833": "/react-100days/static/media/iconfont.25ec50de3531f3225cb0.woff2",
     "static/media/dark.svg": "/react-100days/static/media/dark.93505caa21b66d8a272c.svg",
     "index.html": "/react-100days/index.html",
     "static/media/close-line.svg": "/react-100days/static/media/close-line.02a1d7a21d3896dca6b6.svg",
-    "main.190af6a5.css.map": "/react-100days/static/css/main.190af6a5.css.map",
-    "main.0fb67ebb.js.map": "/react-100days/static/js/main.0fb67ebb.js.map"
+    "main.a2e26b02.css.map": "/react-100days/static/css/main.a2e26b02.css.map",
+    "main.72b12744.js.map": "/react-100days/static/js/main.72b12744.js.map"
   },
   "entrypoints": [
-    "static/css/main.190af6a5.css",
-    "static/js/main.0fb67ebb.js"
+    "static/css/main.a2e26b02.css",
+    "static/js/main.72b12744.js"
   ]
 }

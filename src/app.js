@@ -27,6 +27,10 @@ const App = function () {
           <span>007</span>
           <b>Control</b>
         </Link>
+        <Link to="/011" className="days-link">
+          <span>011</span>
+          <b>Cart</b>
+        </Link>
         <Link to="/012" className="days-link">
           <span>012</span>
           <b>Twitter</b>
