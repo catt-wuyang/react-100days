@@ -1,77 +1,77 @@
-import "./style.css";
-import React, { useContext, useState } from "react";
-import classnames from "classnames";
+import React, { useRef, useState } from "react";
 
-const ThemeContext = React.createContext(null);
+const FormControl = function () {
+  const [inputValue, setInputValue] = useState("");
+  const [selectValue, setSelectValue] = useState("");
+  const [mulValue, setMulValue] = useState([]);
 
-// class Theme extends React.Component {
-//   render() {
-//     return (
-//       <ThemeContext.Provider value={{ color: "dark" }}>
-//         <Content />
-//       </ThemeContext.Provider>
-//     );
-//   }
-// }
+  function inputChange(e) {
+    console.log("username", e.target.value);
+    setInputValue(e.target.value);
+  }
 
-// function Content() {
-//   return (
-//     <ThemeContext.Consumer>
-//       {(context) => <div>{context.color}</div>}
-//     </ThemeContext.Consumer>
-//   );
-// }
+  function selectChange(e) {
+    console.log("gender", e.target.value);
+    setSelectValue(e.target.value);
+  }
 
-function Theme() {
-  const [color, setColor] = useState("light");
+  function mulChange(e) {
+    const val = e.target.value;
+    const i = mulValue.indexOf(val);
+    const newVal = i > -1 ? [...mulValue].splice(i, 1) : [...mulValue, val];
+    console.log(newVal);
+    setMulValue(newVal);
+  }
 
-  function toggleTheme() {
-    const prevColor = color === "light" ? "dark" : "light";
-    setColor(prevColor);
+  function submitHandle(e) {
+    e.preventDefault();
+    console.log("submit", inputValue, selectValue, mulValue);
   }
 
   return (
-    <ThemeContext.Provider value={{ color, toggleTheme }}>
-      <Form />
-    </ThemeContext.Provider>
+    <form onSubmit={submitHandle}>
+      <input value={inputValue} onChange={inputChange} />
+
+      <select value={selectValue} onChange={selectChange}>
+        <option value="male">男</option>
+        <option value="female">女</option>
+      </select>
+
+      <select multiple={true} value={mulValue} onChange={mulChange}>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+      </select>
+
+      <button type="submit">提交</button>
+    </form>
   );
-}
+};
 
-function Form() {
-  return (
-    <Panel title="welcome">
-      <p>
-        <strong>The Mid-Autumn Festival</strong>,also known as the Moon Festival
-        or Mooncake Festival, is a traditional festival celebrated in Chinese
-        culture. Similar holidays are celebrated in Japan,Korea,Vietnam, and
-        other countries in East and Southeast Asia. It is one of the most
-        important holidays in Chinese culture. Its popularity is on par with
-        that of Chinese New Year. The history of the Mid-Autumn Festival dates
-        back over 3,000 years.The festival is held on the 15th day of the 8th
-        month of the Chinese lunisolar calendar with a full moon at night,
-        corresponding to mid-September to early October of the Gregorian
-        calendar.On this day, the Chinese believe that the Moon is at its
-        brightest and fullest size, coinciding with harvest time in the middle
-        of Autumn.
-      </p>
-    </Panel>
-  );
-}
+export default FormControl;
 
-function Panel({ title, children }) {
-  const theme = useContext(ThemeContext);
-  const themeCls = classnames("panel", theme.color);
-  const iconCls = classnames("icon", theme.color);
+const Form = function () {
+  const usenameRef = useRef();
+  const genderRef = useRef();
+
+  function submitHandle(event) {
+    event.preventDefault();
+    const username = usenameRef.current.value;
+    const gender = genderRef.current.value;
+    console.log("submit", username, gender);
+  }
 
   return (
-    <div className={themeCls}>
-      <div className="header">
-        <h2>{title}</h2>
-        <div className={iconCls} onClick={() => theme.toggleTheme()}></div>
-      </div>
-      {children}
+    <div>
+      <form onSubmit={submitHandle}>
+        <input name="usename" ref={usenameRef} />
+
+        <select name="gender" ref={genderRef}>
+          <option value="female">女</option>
+          <option value="male">男</option>
+        </select>
+      </form>
     </div>
   );
-}
-
-export default Theme;
+};

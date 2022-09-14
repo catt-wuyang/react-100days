@@ -15,17 +15,9 @@ const App = function () {
           <span>002</span>
           <b>CountDown</b>
         </Link>
-        <Link to="/004" className="days-link">
-          <span>004</span>
-          <b>optimization</b>
-        </Link>
-        <Link to="/006" className="days-link">
-          <span>006</span>
-          <b>Theme</b>
-        </Link>
         <Link to="/007" className="days-link">
           <span>007</span>
-          <b>Control</b>
+          <b>Theme</b>
         </Link>
         <Link to="/011" className="days-link">
           <span>011</span>
