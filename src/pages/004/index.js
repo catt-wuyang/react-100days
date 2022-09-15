@@ -1,7 +1,7 @@
 import "./style.css";
-import React, { useEffect, useRef, useState } from "react";
-import useDebounce from "./useDebounce";
-import useThrottle from "./useThrottle";
+import React, { useEffect, useState } from "react";
+import useDebounce from "../utils/useDebounce";
+import useThrottle from "../utils/useThrottle";
 
 const Opt = function () {
   const [count, setCount] = useState(0);
@@ -33,11 +33,13 @@ const Opt = function () {
       <div className="block">
         <input className="input" placeholder="请输入" onChange={onSearch} />
       </div>
+
       <div className="block">
         <div className="area" onMouseMove={changeHandle}>
           {count}
         </div>
       </div>
+
       <div className="block">
         <div className="scroll-area" id="scrollBlock">
           <div className="content"></div>

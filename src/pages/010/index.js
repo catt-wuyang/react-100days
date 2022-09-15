@@ -1,11 +1,18 @@
 import "./style.css";
 import React, { useEffect, useState } from "react";
 import Select from "./select";
-import fetchJsonp from "fetch-jsonp";
+import fetchJsonp from "../utils/fetchJsonp";
 
-const fetchData = async (url) => {
+const fetchData = async (url, ...args) => {
   try {
     const response = await fetchJsonp(url, {
+      params: Object.assign(
+        {
+          key: "5N7BZ-R6YCX-PEP4F-T6Z4A-UF3B6-GYBGY",
+          output: "jsonp",
+        },
+        ...args
+      ),
       headers: { Accept: "application/json" },
       jsonpCallback: "cb",
     });
@@ -19,12 +26,16 @@ const Location = function () {
   const [provinces, setProvinces] = useState([]);
   const [cities, setCities] = useState([]);
   const [districts, setDistricts] = useState([]);
-  const [location, setLocation] = useState({});
+
+  const [citySelectReset, setCitySelectReset] = useState(false);
+  const [location, setLocation] = useState({
+    province: "",
+    city: "",
+    district: "",
+  });
 
   useEffect(() => {
-    fetchData(
-      "https://apis.map.qq.com/ws/district/v1/list?output=jsonp&key=5N7BZ-R6YCX-PEP4F-T6Z4A-UF3B6-GYBGY"
-    ).then((data) => {
+    fetchData("https://apis.map.qq.com/ws/district/v1/list").then((data) => {
       const provincesData = [];
       data.result[0].map((item) =>
         provincesData.push({
@@ -37,14 +48,18 @@ const Location = function () {
   }, []);
 
   function onSelectProvince(provinceId) {
+    setCitySelectReset(true);
     if (provinceId) {
-      const loc = location;
-      loc["province"] = provinceId;
+      const loc = Object.assign(location, {
+        province: provinceId,
+        city: "",
+        district: "",
+      });
       setLocation(loc);
 
-      fetchData(
-        `https://apis.map.qq.com/ws/district/v1/getchildren?id=${provinceId}&output=jsonp&key=5N7BZ-R6YCX-PEP4F-T6Z4A-UF3B6-GYBGY`
-      ).then((data) => {
+      fetchData(`https://apis.map.qq.com/ws/district/v1/getchildren`, {
+        id: provinceId,
+      }).then((data) => {
         const citiesData = [];
         data.result[0].map((item) => {
           citiesData.push({
@@ -59,13 +74,15 @@ const Location = function () {
 
   function onSelectCity(cityId) {
     if (cityId) {
-      const loc = location;
-      loc["city"] = cityId;
+      const loc = Object.assign(location, {
+        city: cityId,
+        district: "",
+      });
       setLocation(loc);
 
-      fetchData(
-        `https://apis.map.qq.com/ws/district/v1/getchildren?id=${cityId}&output=jsonp&key=5N7BZ-R6YCX-PEP4F-T6Z4A-UF3B6-GYBGY`
-      ).then((data) => {
+      fetchData(`https://apis.map.qq.com/ws/district/v1/getchildren`, {
+        id: cityId,
+      }).then((data) => {
         const districtsData = [];
         data.result[0].map((item) => {
           districtsData.push({
@@ -80,24 +97,29 @@ const Location = function () {
 
   function onSelectDistrict(districtId) {
     if (districtId) {
-      const loc = location;
-      loc["district"] = districtId;
+      const loc = Object.assign(location, {
+        district: districtId,
+      });
       setLocation(loc);
     }
   }
 
   return (
     <div>
-      <Select options={provinces} onChange={onSelectProvince} />
+      <Select name="province" options={provinces} onChange={onSelectProvince} />
       <Select
+        name="city"
+        key={`city_${location["province"]}`}
         options={cities}
         onChange={onSelectCity}
-        disabled={location["province"] == undefined}
+        disabled={!location["province"]}
       />
       <Select
+        name="district"
+        key={`district_${location["city"]}`}
         options={districts}
         onChange={onSelectDistrict}
-        disabled={location["city"] === undefined}
+        disabled={!location["city"]}
       />
     </div>
   );
