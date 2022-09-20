@@ -1,5 +1,6 @@
 import "./style.css";
 import React, { useEffect, useState } from "react";
+import { List, Checkbox } from "antd";
 import { DB_CART } from "./db";
 import useChecked from "./useChecked";
 
@@ -21,16 +22,18 @@ const Cart = function () {
 
   return (
     <div className="cart-wrapper">
-      {cartData.map((product, index) => {
-        return (
+      <List
+        bordered
+        dataSource={cartData}
+        renderItem={(item, index) => (
           <CartItem
             key={`cart_item${index}`}
-            product={product}
+            product={item}
             checkedMap={checkedMap}
             onChecked={onChecked}
           />
-        );
-      })}
+        )}
+      />
 
       <div className="cart-checkout flex-layout">
         <div>
@@ -52,12 +55,12 @@ const CartItem = function ({ product, onChecked, checkedMap }) {
   return (
     <div className="cart-item flex-layout">
       <div>
-        <input
-          type="checkbox"
+        <Checkbox
           checked={checkedMap.includes(sku_id)}
           onChange={() => onChecked(sku_id)}
-        />
-        <span className="product-name">{name}</span>
+        >
+          {name}
+        </Checkbox>
       </div>
       <div>{price}</div>
     </div>

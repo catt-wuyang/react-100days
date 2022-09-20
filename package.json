@@ -5,14 +5,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && rm -rf docs && mv build docs ",
-    "lint": "eslint --config .eslintrc.js --fix src",
-    "prepare": "husky install",
-    "pre-commit": "lint-staged"
+    "lint": "eslint --config .eslintrc.js --fix src"
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app"
     ]
   },
   "browserslist": {
@@ -28,7 +25,6 @@
     ]
   },
   "dependencies": {
-    "@types/jest": "^28.1.1",
     "@types/node": "^17.0.41",
     "@types/react": "^18.0.12",
     "@types/react-dom": "^18.0.5",
@@ -36,15 +32,7 @@
     "@typescript-eslint/parser": "^5.33.0",
     "antd": "^4.22.4",
     "axios": "^0.27.2",
-    "axios-jsonp": "^1.0.4",
-    "babel-eslint": "^10.1.0",
     "classnames": "^2.3.1",
-    "eslint": "^8.21.0",
-    "eslint-plugin-react": "^7.30.1",
-    "fetch-jsonp": "^1.2.3",
-    "lodash": "^4.17.21",
-    "lodash.debounce": "^4.0.8",
-    "nrm": "^1.2.4",
     "prop-types": "^15.8.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
@@ -55,9 +43,10 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.0.3",
-    "@commitlint/config-conventional": "^17.0.3",
+    "babel-eslint": "^10.1.0",
     "babel-plugin-import": "^1.13.5",
-    "bad-words": "^3.0.4"
+    "eslint": "^8.21.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react": "^7.30.1"
   }
 }

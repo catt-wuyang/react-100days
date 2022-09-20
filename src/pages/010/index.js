@@ -1,7 +1,7 @@
 import "./style.css";
 import React, { useEffect, useState } from "react";
 import Select from "./select";
-import fetchJsonp from "../utils/fetchJsonp";
+import fetchJsonp from "./fetchJsonp";
 
 const fetchData = async (url, ...args) => {
   try {
