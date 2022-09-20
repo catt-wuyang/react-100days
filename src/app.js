@@ -9,27 +9,19 @@ const App = function () {
       <div className="days-display">
         <Link to="/001" className="days-link">
           <span>001</span>
-          <b>Todo-List</b>
+          <b>Todo-List ✔</b>
         </Link>
         <Link to="/002" className="days-link">
           <span>002</span>
           <b>CountDown</b>
         </Link>
-        <Link to="/003" className="days-link">
-          <span>003</span>
-          <b>Server</b>
-        </Link>
         <Link to="/007" className="days-link">
           <span>007</span>
           <b>Theme</b>
         </Link>
-        <Link to="/009" className="days-link">
-          <span>009</span>
-          <b>Image-Flow</b>
-        </Link>
         <Link to="/010" className="days-link">
           <span>010</span>
-          <b>Select</b>
+          <b>Select ✔</b>
         </Link>
         <Link to="/011" className="days-link">
           <span>011</span>
