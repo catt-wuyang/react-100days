@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-100days/static/css/main.b205f3e0.css",
-    "main.js": "/react-100days/static/js/main.f49872b7.js",
+    "main.js": "/react-100days/static/js/main.cf2f95a3.js",
     "static/media/light.svg": "/react-100days/static/media/light.3a1a75172cab380e6937.svg",
     "static/media/iconfont.ttf?t=1634800654833": "/react-100days/static/media/iconfont.f41f9aff8a6dc4775529.ttf",
     "static/media/iconfont.woff?t=1634800654833": "/react-100days/static/media/iconfont.498fa293fb30f2c7c7c1.woff",
@@ -10,10 +10,10 @@
     "index.html": "/react-100days/index.html",
     "static/media/close-line.svg": "/react-100days/static/media/close-line.02a1d7a21d3896dca6b6.svg",
     "main.b205f3e0.css.map": "/react-100days/static/css/main.b205f3e0.css.map",
-    "main.f49872b7.js.map": "/react-100days/static/js/main.f49872b7.js.map"
+    "main.cf2f95a3.js.map": "/react-100days/static/js/main.cf2f95a3.js.map"
   },
   "entrypoints": [
     "static/css/main.b205f3e0.css",
-    "static/js/main.f49872b7.js"
+    "static/js/main.cf2f95a3.js"
   ]
 }
